@@ -9,13 +9,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 https://user-images.githubusercontent.com/61936289/179342024-48722940-384a-462c-a3b7-3a9f3a82fc9f.mp4
 
 ## ScreenShots
-###Signup 
+Signup 
 ![Screenshot from 2022-07-26 22-43-59](https://user-images.githubusercontent.com/61936289/181070731-42094dc7-cf68-4b06-9128-83b54f4a02f1.png)
-###HomePage
+HomePage
 ![Screenshot from 2022-07-26 22-46-48](https://user-images.githubusercontent.com/61936289/181070747-c6327089-187f-4268-bcb1-9612083219b9.png)
-###Login
+Login
 ![Screenshot from 2022-07-26 22-47-04](https://user-images.githubusercontent.com/61936289/181070776-6a4a23ed-d0be-45c7-bed0-838779d075a7.png)
-###Contact Page
+Contact Page
 ![Screenshot from 2022-07-26 22-47-30](https://user-images.githubusercontent.com/61936289/181070800-60eb134f-c837-42f8-bb86-9d6659fed564.png)
 
 ## Available Scripts
