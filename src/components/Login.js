@@ -8,7 +8,7 @@ const Login = (props) => {
   
   const handleSubmit = async (e)=>{
     e.preventDefault();
-    const response = await fetch("http://ancient-hamlet-43038.herokuapp.com/api/auth/login", {
+    const response = await fetch("https://ancient-hamlet-43038.herokuapp.com/api/auth/login", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

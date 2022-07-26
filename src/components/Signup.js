@@ -15,7 +15,7 @@ const Signup = (props) => {
       props.showAlert("Password and Confirm Password needs to match.", "danger");
       return;
     }
-    const response = await fetch("http://ancient-hamlet-43038.herokuapp.com/api/auth/createuser", {
+    const response = await fetch("https://ancient-hamlet-43038.herokuapp.com/api/auth/createuser", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
