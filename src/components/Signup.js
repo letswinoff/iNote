@@ -3,12 +3,18 @@ import { useHistory } from 'react-router-dom';
 
 const Signup = (props) => {
   const [credentials, setCredentials] = useState({name: "", email: "", password: "", cpassword: ""})
+  const [error, setError] = useState([]);
   let history = useHistory();
 
 
   const handleSubmit = async (e)=>{
     e.preventDefault();
-    const {name, email, password} = credentials;
+
+    const {name, email, password, cpassword} = credentials;
+    if (password !== cpassword) {
+      props.showAlert("Password and Confirm Password needs to match.", "danger");
+      return;
+    }
     const response = await fetch("http://localhost:5000/api/auth/createuser", {
       method: 'POST',
       headers: {
@@ -25,7 +31,8 @@ const Signup = (props) => {
       props.showAlert("Account Created Successfully", "success");
     }
     else{
-        props.showAlert("Invalid credentials", "danger");
+      setError(json.errors);
+      props.showAlert("Invalid credentials", "danger");
     }
   }
 
@@ -48,14 +55,21 @@ const Signup = (props) => {
           </div>
           <div className="mb-3">
             <label htmlFor="password">Password</label>
-            <input type="password" className="form-control" id="password" placeholder="Create a password"  onChange={onChange} minLength={5} required />
+            <input type="password" className="form-control" name="password" id="password" placeholder="Create a password" onChange={onChange} minLength={5} required />
           </div>
           <div className="mb-3">
             <label htmlFor="password">Confirm Password</label>
-            <input type="password" className="form-control" id="password"  onChange={onChange} minLength={5} required />
+            <input type="password" className="form-control" name="cpassword" id="cpassword"  onChange={onChange} minLength={5} required />
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>
+        <div>
+          {error.map((v) => (
+            <>
+             {v['msg']}
+            </>
+          ))}
+        </div>
     </div>
   )
 }
